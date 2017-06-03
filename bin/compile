@@ -2,6 +2,6 @@
 # bin/compile <build-dir> <cache-dir>
 
 # install invoiceninja from github 
-echo "Installing Invoice Ninja to ${BUILD_DIR}"
-unzip /tmp/*.zip -C ${BUILD_DIR}/app < <(wget -q -O - https://github.com/invoiceninja/invoiceninja/archive/master.zip)
+echo "Installing Invoice Ninja"
+wget -qO- https://github.com/invoiceninja/invoiceninja/archive/master.zip | unzip app
 echo "Downloaded Invoice Ninja"
