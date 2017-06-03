@@ -3,5 +3,6 @@
 
 # install invoiceninja from github 
 echo "Installing Invoice Ninja"
-wget -qO- -O tmp.zip https://github.com/invoiceninja/invoiceninja/archive/master.zip && unzip -j tmp.zip -d app && rm tmp.zip
+curl https://github.com/invoiceninja/invoiceninja/archive/master.zip | tar -x --directory app
+#wget -qO- -O tmp.zip https://github.com/invoiceninja/invoiceninja/archive/master.zip && unzip -j tmp.zip -d app && rm tmp.zip
 echo "Downloaded Invoice Ninja"
