@@ -2,9 +2,10 @@
 # bin/detect <build-dir>
 # Usage: bin/compile BUILD_DIR
 
-if [ -f ./app/.env ]; then
+if [ -f $1/app/.env ]; then
 	echo "Invoice Ninja"
 	exit 0
 else
+	echo "No ENV file present in ${BUILD_DIR}"
 	exit 1
 fi
