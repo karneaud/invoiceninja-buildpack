@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "-----> Nothing to do."
+# install invoiceninja from github 
+wget https://github.com/invoiceninja/invoiceninja/archive/master.zip ${BUILD_DIR}/app
+# copy over the env
+cp .env ${BUILD_DIR}/app/.env
