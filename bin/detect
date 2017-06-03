@@ -2,7 +2,7 @@
 # bin/detect <build-dir>
 # Usage: bin/compile BUILD_DIR
 
-if [ -f $1/app/.env ]; then
+if [ -f ./app/.env ]; then
 	echo "Invoice Ninja"
 	exit 0
 else
