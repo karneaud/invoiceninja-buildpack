@@ -1,0 +1,14 @@
+{
+    "name": "karneaud/invoiceninja-buildpack",
+    "description": "Install Invoice Ninja on Heroku",
+    "keywords": ["heroku", "invoice", "php", "ninja", "invoiceninja"],
+    "homepage": "https://github.com/karneaud/invoiceninja-buildpack/new/master",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kendall Arneaud",
+            "email": "kendall.arneaud@gmail.com"
+        }
+    ]
+}
