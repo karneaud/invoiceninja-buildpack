@@ -7,7 +7,7 @@ echo "Installing Invoice Ninja $BUILD_DIR"
 wget -qO- -O $BUILD_DIR/tmp.zip https://github.com/invoiceninja/invoiceninja/archive/master.zip
 unzip -q $BUILD_DIR/tmp.zip -d $BUILD_DIR/.tmp
 mkdir -p ~/app
-cp -vRq $BUILD_DIR/.tmp/invoiceninja-master/* ~/app
+cp -R $BUILD_DIR/.tmp/invoiceninja-master/* ~/app
 rm -r $BUILD_DIR/.tmp
 rm $BUILD_DIR/tmp.zip
 #cd ~/app && composer install
