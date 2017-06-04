@@ -11,5 +11,6 @@ mv invoiceninja-master app
 rm master.zip
 ls -la ~/app
 ls -la /app
+ls -la .
 #cd ~/app && composer install
 echo "Downloaded Invoice Ninja"
