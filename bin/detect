@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-# Usage: bin/compile BUILD_DIR
 
 if [ -f $1/app/.env ]; then
 	echo "Invoice Ninja"
 	exit 0
 else
-	echo "No ENV file present in ${BUILD_DIR}"
+	echo "No ENV file present in $1"
 	exit 1
 fi
