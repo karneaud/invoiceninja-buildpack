@@ -8,7 +8,7 @@ cd ${BUILD_DIR}
 wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip
 unzip -q master.zip
 cp -R invoiceninja-master/* app
-rm invoiceninja-master
+rm -rf invoiceninja-master
 rm master.zip
 cd app && composer install
 echo "Downloaded Invoice Ninja"
