@@ -12,4 +12,4 @@ cp -R invoiceninja-master/* app
 rm -rf invoiceninja-master
 rm master.zip
 echo "Installing Invoice Ninja"
-cd app && composer install --no-dev --no-progress
+cd app && composer install --no-dev --no-progress --prefer-dist -o
