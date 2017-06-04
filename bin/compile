@@ -17,4 +17,4 @@ cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist
 echo "Invoice Ninja installed"
 
 echo "Running composer compile"
-composer compile --no-dev --no-progress
+composer run-script compile --no-dev --no-progress
