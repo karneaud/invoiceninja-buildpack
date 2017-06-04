@@ -12,4 +12,11 @@ cp -R invoiceninja-master/* app
 rm -rf invoiceninja-master
 rm master.zip
 echo "Installing Invoice Ninja"
-cd app && composer install --no-dev --no-progress --prefer-dist -o
+cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
+
+echo "Invoice Ninja installed"
+
+if cat "$COMPOSER" | python -c 'import sys,json; sys.exit("compile" not in json.load(sys.stdin).get("scripts", {}));'; then
+    status "Running 'composer compile'..."
+    composer run-script ${HEROKU_PHP_INSTALL_DEV-"--no-dev"} --no-interaction compile 2>&1 | indent
+fi
