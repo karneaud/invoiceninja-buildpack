@@ -3,6 +3,7 @@
     "description": "Install Invoice Ninja on Heroku",
     "keywords": ["heroku", "invoice", "php", "ninja", "invoiceninja"],
     "homepage": "https://github.com/karneaud/invoiceninja-buildpack/new/master",
+    "vesion":"master",
     "type": "library",
     "license": "MIT",
     "authors": [
