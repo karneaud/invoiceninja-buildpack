@@ -9,5 +9,7 @@ wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip
 unzip -q master.zip
 mv invoiceninja-master app
 rm master.zip
+ls -la ~/app
+ls -la /app
 #cd ~/app && composer install
 echo "Downloaded Invoice Ninja"
