@@ -10,3 +10,5 @@ cp -vR $BUILD_DIR/.tmp/invoiceninja-master/* ~/app
 rm -r $BUILD_DIR/.tmp
 rm $BUILD_DIR/tmp.zip
 echo "Downloaded Invoice Ninja"
+ls -la 
+ls -la ~/
