@@ -10,5 +10,5 @@ mkdir -p ~/app
 cp -vR $BUILD_DIR/.tmp/invoiceninja-master/* ~/app
 rm -r $BUILD_DIR/.tmp
 rm $BUILD_DIR/tmp.zip
-cd ~/app && composer install
+#cd ~/app && composer install
 echo "Downloaded Invoice Ninja"
