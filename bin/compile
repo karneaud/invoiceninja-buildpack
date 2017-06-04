@@ -5,7 +5,7 @@ BUILD_DIR=$1
 echo "Installing Invoice Ninja $BUILD_DIR"
 cd ${BUILD_DIR}
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
-wget -qO- -O https://github.com/invoiceninja/invoiceninja/archive/master.zip
+wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip
 unzip -q master.zip
 mv invoiceninja-master app
 rm master.zip
