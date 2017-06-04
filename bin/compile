@@ -16,7 +16,5 @@ cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist
 
 echo "Invoice Ninja installed"
 
-if cat "$COMPOSER" | python -c 'import sys,json; sys.exit("compile" not in json.load(sys.stdin).get("scripts", {}));'; then
-    status "Running 'composer compile'..."
-    composer run-script ${HEROKU_PHP_INSTALL_DEV-"--no-dev"} --no-interaction compile 2>&1 | indent
-fi
+echo "Running composer compile"
+composer compile --no-dev --no-progress
