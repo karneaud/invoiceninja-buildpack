@@ -17,4 +17,8 @@ cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist
 echo "Invoice Ninja installed"
 
 echo "Running composer compile"
-cd ../ composer run-script compile &> /dev/null
+bp_dir=$(cd $(dirname $0); cd ..; pwd)
+
+# convenience functions
+source $bp_dir/util/common.sh
+cd ../ composer run-script --no-dev compile 2>&1 | indent
