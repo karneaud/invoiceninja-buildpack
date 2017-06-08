@@ -7,11 +7,11 @@ cd ${BUILD_DIR}
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
 wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip
 unzip -q master.zip
-echo "Downloaded Invoice Ninja"
+echo "Downloaded Invoice Ninja to $BUILD_DIR"
 cp -R invoiceninja-master/* app
 rm -rf invoiceninja-master
 rm master.zip
-echo "Installing Invoice Ninja"
+echo "Installing Invoice Ninja $BUILD_DIR"
 cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 
 echo "Invoice Ninja installed"
@@ -21,4 +21,6 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # convenience functions
 source $bp_dir/utils/common.sh
-cd ../ composer run-script --no-dev compile 2>&1 | indent
+cd ../
+echo "in directory $PWD"
+composer run-script --no-dev compile 2>&1 | indent
