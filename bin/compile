@@ -5,7 +5,7 @@ ENV_DIR=$3
 # install invoiceninja from github 
 echo "Installing Invoice Ninja $BUILD_DIR"
 cd ${BUILD_DIR}
-version=$(cat $ENV_DIR/INVOICENINJA_VERSION)
+version="$(cat $ENV_DIR/INVOICENINJA_VERSION)"
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
 wget -q https://github.com/invoiceninja/invoiceninja/archive/$version.zip
 
