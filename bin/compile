@@ -11,7 +11,7 @@ wget -q https://github.com/invoiceninja/invoiceninja/archive/$version.zip -O mas
 
 unzip -q master.zip
 echo "Downloaded Invoice Ninja to $BUILD_DIR"
-cp -R -n invoiceninja-"${version/^v/}"/* app
+cp -R -n invoiceninja-"${version/#v/}"/* app
 rm -rf master
 rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
