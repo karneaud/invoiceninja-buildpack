@@ -7,13 +7,13 @@ echo "Installing Invoice Ninja $BUILD_DIR"
 cd ${BUILD_DIR}
 version="$(cat $ENV_DIR/INVOICENINJA_VERSION)"
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
-wget -q https://github.com/invoiceninja/invoiceninja/archive/$version.zip
+wget -q https://github.com/invoiceninja/invoiceninja/archive/$version.zip -O master.zip
 
-unzip -q $version.zip
+unzip -q master.zip
 echo "Downloaded Invoice Ninja to $BUILD_DIR"
-cp -R -n invoiceninja-master/* app
-rm -rf invoiceninja-master
-rm $version.zip
+cp -R -n master/* app
+rm -rf master
+rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
 cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 
