@@ -16,7 +16,6 @@ chmod -R 0777 app/storage
 rm -rf master
 rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
-composer config -g github-oauth.github.com 84da9f4d13185776a8c7c8e76cf8d0506e49e3da
 composer config repositories.karneaud/omnipay-wipay vcs git@bitbucket.org:karneaud/omnipay-wipay.git
  
 cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
