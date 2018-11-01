@@ -16,15 +16,15 @@ chmod -R 0777 app/storage
 rm -rf master
 rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
-cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
+# cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 
-echo "Invoice Ninja installed"
+# echo "Invoice Ninja installed"
 
 echo "Running composer compile"
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # convenience functions
 source $bp_dir/utils/common.sh
-cd ../
+# cd ../
 echo "in directory $PWD"
 composer run-script --no-dev compile 2>&1 | indent
