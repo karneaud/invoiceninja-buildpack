@@ -21,7 +21,6 @@ composer config repositories.karneaud/omnipay-wipay vcs git@bitbucket.org:karnea
 cd app && composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 composer require karneaud/omnipay-wipay --no-dev
 echo "Invoice Ninja installed"
-co
 echo "Running composer compile"
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
