@@ -18,6 +18,8 @@ rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
 cd app 
 composer config repositories.6 vcs git@bitbucket.org:karneaud/omnipay-wipay.git
+composer require --no-update karneaud/omnipay-wipay:^1.1.11
+rm composer.lock
 composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 echo "Invoice Ninja installed"
 echo "Running composer compile"
