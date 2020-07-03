@@ -7,9 +7,11 @@ pwd $BUILD_DIR
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
 curl -LO https://github.com/invoiceninja/invoiceninja/archive/$version.zip -o master.zip
 ls -la
-unzip -q ${version}.zip
+unzip -q master.zip
 echo "Unziped Invoice Ninja ${version} to $BUILD_DIR"
 cp -R -n invoiceninja-"${version/#v/}"/* ./
 chmod -R 0777 ./storage
-rm ${version}.zip
+rm master.zip
 rm -rf invoiceninja-"${version/#v/}"
+ls -la
+cat < composer.json
