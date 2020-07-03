@@ -13,13 +13,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Invoice Ninja
-      id: bash-install-invoiceninja
-      working-directory: ./www
-      shell: bash
-      env:
+    - working-directory: ./www
+    - env:
         BUILD_DIR: ./
         INVOICENINJA_VERSION: 5.0.10
+    - name: Download Invoice Ninja
+      uses: dsaltares/fetch-gh-release-asset@master
+      with:
+        repo: "invoiceninja/invoiceninja"
+        version: "latest"
+        file: "v${INVOICENINJA_VERSION}.zip"
+        
+    - name: Install Invoice Ninja
+      id: bash-install-invoiceninja
+      shell: bash
       run: ../bin/compile
       
     - name: Validate composer.json and composer.lock
