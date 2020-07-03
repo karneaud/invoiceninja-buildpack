@@ -20,7 +20,7 @@ jobs:
       shell: bash
       env: 
         INVOICENINJA_VERSION: 5.0.10
-        BUILD_DIR: ./www
+        BUILD_DIR: ./
       run: ../bin/compile
       
     - name: Validate composer.json and composer.lock
