@@ -17,6 +17,7 @@ jobs:
     - env:
         BUILD_DIR: ./
         INVOICENINJA_VERSION: 5.0.10
+    
     - name: Download Invoice Ninja
       uses: dsaltares/fetch-gh-release-asset@master
       with:
