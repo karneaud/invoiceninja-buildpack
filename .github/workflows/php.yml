@@ -21,7 +21,7 @@ jobs:
       env: 
         INVOICENINJA_VERSION: 5.0.10
         BUILD_DIR: ./www
-      run: bin/compile
+      run: ../bin/compile
       
     - name: Validate composer.json and composer.lock
       run: composer validate
