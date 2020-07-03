@@ -2,9 +2,9 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ master ]
+    branches: [ humantic ]
   pull_request:
-    branches: [ master ]
+    branches: [ humantic ]
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
     - name: Install Invoice Ninja
       id: bash-install-invoiceninja
       env: 
-        INVOICENINJA_VERSION 5.0.10
-        BUILD_DIR /var/www
+        INVOICENINJA_VERSION: 5.0.10
+        BUILD_DIR: /var/www
       run: bash bin/compile
       
     - name: Validate composer.json and composer.lock
