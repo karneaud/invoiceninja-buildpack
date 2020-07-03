@@ -13,13 +13,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      
+    - env: 
+        INVOICENINJA_VERSION: 5.0.10
+    - name: curl
+      uses: wei/curl@v1
+      with: 
+        args: https://github.com/invoiceninja/invoiceninja/archive/${INVOICENINJA_VERSION}.zip -o master.zip -L
+    
     - name: Install Invoice Ninja
       id: bash-install-invoiceninja
       working-directory: ./www
       shell: bash
-      env: 
-        INVOICENINJA_VERSION: 5.0.10
+      env:
         BUILD_DIR: ./
       run: ../bin/compile
       
