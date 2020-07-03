@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - working-directory: ./www
     - env:
         BUILD_DIR: ./
         INVOICENINJA_VERSION: 5.0.10
@@ -28,6 +27,7 @@ jobs:
     - name: Install Invoice Ninja
       id: bash-install-invoiceninja
       shell: bash
+      working-directory: ./www
       run: ../bin/compile
       
     - name: Validate composer.json and composer.lock
