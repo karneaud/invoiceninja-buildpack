@@ -1,26 +1,15 @@
 #!/usr/bin/env bash
-version=$INVOICENINJA_VERSION
+version="v${INVOICENINJA_VERSION}"
 # install invoiceninja from github 
 echo "Installing Invoice Ninja ${version} $BUILD_DIR"
 cd $BUILD_DIR
 pwd $BUILD_DIR
 #wget -q https://github.com/invoiceninja/invoiceninja/archive/master.zip && tar -xzf master.zip --strip-components=1 --directory=app && rm master.zip
-curl https://github.com/invoiceninja/invoiceninja/archive/$version.zip -L -o master.zip
+#curl https://github.com/invoiceninja/invoiceninja/archive/$version.zip -L -o master.zip
 ls -la
-unzip -q master.zip
-echo "Downloaded Invoice Ninja ${version} to $BUILD_DIR"
+unzip -q ${version}.zip
+echo "Unziped Invoice Ninja ${version} to $BUILD_DIR"
 cp -R -n invoiceninja-"${version/#v/}"/* ./
 chmod -R 0777 ./storage
-rm -rf master
-rm master.zip
-echo "Installing Invoice Ninja $BUILD_DIR"
-composer install --no-dev --no-interaction --no-progress --prefer-dist -o
-echo "Invoice Ninja installed"
-echo "Running composer compile"
-bp_dir=$(cd $(dirname $0); cd ..; pwd)
-
-# convenience functions
-source $bp_dir/utils/common.sh
-cd ../
-echo "in directory $PWD"
-composer run-script --no-dev compile 2>&1 | indent
+rm ${version}.zip
+rm -rf invoiceninja-"${version/#v/}"
