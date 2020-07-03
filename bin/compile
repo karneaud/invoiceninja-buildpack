@@ -8,12 +8,11 @@ wget -q https://github.com/invoiceninja/invoiceninja/archive/$version.zip -O mas
 
 unzip -q master.zip
 echo "Downloaded Invoice Ninja ${version} to $BUILD_DIR"
-cp -R -n invoiceninja-"${version/#v/}"/* app
-chmod -R 0777 app/storage
+cp -R -n invoiceninja-"${version/#v/}"/* ./
+chmod -R 0777 ./storage
 rm -rf master
 rm master.zip
 echo "Installing Invoice Ninja $BUILD_DIR"
-cd app
 composer install --no-dev --no-interaction --no-progress --prefer-dist -o
 echo "Invoice Ninja installed"
 echo "Running composer compile"
