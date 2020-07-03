@@ -16,6 +16,7 @@ jobs:
       
     - name: Install Invoice Ninja
       id: bash-install-invoiceninja
+      working-directory: /var/www
       env: 
         INVOICENINJA_VERSION: 5.0.10
         BUILD_DIR: /var/www
